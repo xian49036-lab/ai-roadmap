@@ -1,0 +1,31 @@
+# ai-roadmap
+
+20 个月 AI 学习记录。目标：2028 年毕业时进入 AI 行业，月薪 8000+。
+
+主攻方向：AI 应用开发（RAG / Agent / 模型部署），不碰算法研发岗。
+
+## 学习进度
+
+| 日期 | 内容 | 产出 |
+|---|---|---|
+| 2026-10-24 | 环境搭建（Python / VS Code / Git）、Python 基础语法 | `for循环.py` 九九乘法表 |
+| 2026-10-27 | Git 首次提交与推送到 GitHub | 本仓库跑通 |
+
+## 目录说明
+
+| 文件 | 内容 |
+|---|---|
+| `for循环.py` | 九九乘法表：双层 for 循环 + f-string + `end="\t"` 对齐 |
+| `ladder.py` | Python 入门七关阶梯：print → 变量 → 数据类型 → 输入 → 判断 → 循环 → 嵌套循环 |
+
+## 踩过的坑
+
+- `git commit` 前必须先 `git add`，否则报 `nothing added to commit`
+- 命令行（git / curl）不会自动走系统代理，需要单独配置：`git config --global http.proxy http://127.0.0.1:7890`
+- GitHub 上"授权成功"不等于推送完成，还要执行 `git push`
+
+## 下一步
+
+- 列表与字典
+- 函数与模块
+- pandas 数据处理
