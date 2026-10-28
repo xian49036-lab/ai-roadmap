@@ -17,7 +17,7 @@ print("最后一个：", fruits[-1])    # 橘子（-1 表示倒数第一）
 print("一共几个：", len(fruits))
 
 # 切片：[开始:结束] 含头不含尾
-nums = [10, 20, 30, 40, 50]
+nums = [ 10,20,30, 40, 50]
 print("nums[1:3] =", nums[1:3])   # [20, 30] —— 要 1 和 2，不要 3
 print("nums[:2]  =", nums[:2])    # 从头到 2（不含）
 print("nums[2:]  =", nums[2:])    # 从 2 到最后
@@ -137,7 +137,14 @@ print("===== 练习 =====")
 print("--- 练习 1 ---")
 ex1 = [88, 92, 75, 60, 95, 45, 78]
 # 在下面写你的代码（用 for 循环，别用 sum()）
-
+count = 0
+total = 0
+for e in ex1:
+    total += e
+    if e >= 60:
+        count += 1
+print(f"平均成绩：{total / len(ex1):.2f}，及格人数：{count}")
+   
 
 # 练习 2：用字典存成绩，然后逐个打印
 # 要求：建一个字典 {"小明": 88, "小红": 95, "小刚": 72}
@@ -145,7 +152,9 @@ ex1 = [88, 92, 75, 60, 95, 45, 78]
 print()
 print("--- 练习 2 ---")
 # 在下面写你的代码
-
+students_dict = {"小明": 88, "小红": 95, "小刚": 72}
+for name, score in students_dict.items():
+     print(f"{name} 考了 {score} 分")
 
 # 练习 3（有点挑战）：找出平均分最高的学生
 # 要求：students2 里每人有 3 科成绩，算出每人的平均分，找出平均分最高的人
@@ -157,4 +166,11 @@ students2 = [
     {"name": "小刚", "scores": [72, 65, 80]},
 ]
 # 提示：先算 avg = sum(s["scores"]) / len(s["scores"])，再比大小
-# 在下面写你的代码
+for s in students2:
+    avg = sum(s["scores"]) / len(s["scores"])
+    s["avg"] = avg  # 把平均分存回字典里，方便后面找最大值
+best_student = students2[0]
+for s in students2:
+    if s["avg"] > best_student["avg"]:
+        best_student = s
+print(f"平均分最高的是 {best_student['name']}，平均分为 {best_student['avg']:.2f}")
