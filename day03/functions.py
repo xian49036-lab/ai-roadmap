@@ -217,6 +217,22 @@ print("===== 练习 =====")
 print("--- 练习 1 ---")
 test1 = [88, 92, 75, 60, 95, 45, 78]
 # 在下面写你的代码
+def min_max(scores):
+    hi = scores[0]
+    lo = scores[0]
+    for t in scores:
+        if  t>hi:
+            hi=t
+        if  t<lo:
+            lo=t
+    return lo,hi
+lo,hi =min_max(test1)
+print ("最大值:",hi,"最小值是:",lo)
+       
+        
+        
+
+        
 
 
 # 练习 2：写一个函数 grade(score)，返回等级字符串
@@ -227,8 +243,16 @@ print("--- 练习 2 ---")
 test2 = [95, 82, 76, 58, 90]
 # 在下面写你的代码
 
+test2 = [95, 82, 76, 58, 90]
+def grade(score):
+    for line,label in [(90,"优秀"),(80,"良好"),(60,"及格")]:
+        if score >= line :
+           return label
+    return "不及格"
+for t in test2:
+     print(t, "->", grade(t))
 
-# 练习 3：写一个函数 word_count(text)，统计一段文字里每个词出现的次数
+# 练习 3：写一个函数 word_count()text，统计一段文字里每个词出现的次数
 # 要求：先 text.split() 切成列表，再用字典累加，最后返回那个字典
 # 期望：word_count("猫 狗 猫 鸟 猫") 返回 {'猫': 3, '狗': 1, '鸟': 1}
 # 提示：字典累加的标准写法是  d[word] = d.get(word, 0) + 1
@@ -236,7 +260,12 @@ print()
 print("--- 练习 3 ---")
 test3 = "猫 狗 猫 鸟 猫"
 # 在下面写你的代码
-
+def word_count(text):
+    d = {}
+    for word in text.split():
+        d[word] = d.get(word,0)+1
+    return d
+print(word_count(test3))
 
 # 挑战题（做完上面三道再看）：
 # 写一个函数 report(scores)，直接打印一份完整报告：
@@ -247,3 +276,13 @@ test3 = "猫 狗 猫 鸟 猫"
 # 然后把 test1 传进去，一行搞定所有统计
 print()
 print("--- 挑战题 ---")
+test1 = [88, 92, 75, 60, 95, 45, 78]
+def report(scores):
+    avg = (sum(scores)/len(scores))  
+    passed =len ([s for s in scores if s >= 60])/len(scores)
+    print(f"平均分：{avg:.2f}")
+    print(f"及格率：{passed * 100:.1f}%")
+    print(f"最高分：{max(scores)}")
+    print(f"最低分：{min(scores)}")
+report(test1)
+

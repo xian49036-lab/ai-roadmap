@@ -23,6 +23,7 @@
 5. day03 · 函数 def
 6. day01 · Git 与终端
 7. 读报错的三步法
+8. 错词本
 
 
 ---
@@ -178,3 +179,30 @@ Traceback (most recent call last):
 KeyError: 'phone'
 ```
 → 读作：第 42 行，`KeyError`（键错误），字典里没有 `phone` 这个键。
+
+---
+
+## 八、错词本
+
+> 每次背词答错或混淆的词记在这里。复习时**只看这一节**，其他都是查的，这里是背的。
+
+### 2026-10-28（第 1 轮）
+
+| 英文 | 正确含义 | 我答成了 | 一句话纠正 |
+|---|---|---|---|
+| `Traceback` | 追踪信息（从最下面一行读起） | 回滚 | 回滚是 Git 的 `rollback`/`revert`，跟 Python 报错无关 |
+| `expected` | 期望、**本该有** | 丢失 | `expected` = 少了该有的（如 `expected an indented block`） |
+| `AttributeError` | 属性错误：对象没有这个属性/方法 | 以为是"列表里没有香蕉这个字符串" | 报错里带引号的那个词（`'apend'`）才是它不认识的名字，通常是拼错了 |
+| `ValueError` | 值错误：类型对、值不合法 | `TypeError` | `int("abc")` 是 ValueError；`5 + "abc"` 才是 TypeError |
+| `KeyError` | 键错误：字典没这个键 | `AttributeError` | 方括号里写**字符串** → KeyError；用**点号** → AttributeError |
+| `missing` / `required` | 缺少 / 必填的 | 未识别、无法读取 | `missing 1 required positional argument` = 缺 1 个必填的位置参数 |
+
+### 这一轮的通关句（下次先默这三条）
+
+1. **点号出问题 → `AttributeError`；方括号里是字符串 → `KeyError`；方括号里是数字 → `IndexError`。**
+2. **类型对不上 → `TypeError`；类型对但值不合法 → `ValueError`。**
+3. **`expected` = 少了该有的；`unexpected` = 多出来的。**
+
+### 待复查（下次开头先考这 6 个）
+
+`Traceback` `expected` `AttributeError` `ValueError` `KeyError` `missing`
