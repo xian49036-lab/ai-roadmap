@@ -1,0 +1,6 @@
+# 脚本运行时自动生成的文件，不用进版本库
+day04/demo_output.txt
+
+# Python 缓存
+__pycache__/
+*.pyc
