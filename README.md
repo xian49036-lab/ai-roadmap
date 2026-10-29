@@ -18,21 +18,25 @@
 ```
 ai-roadmap/
 ├── VOCAB.md   代码英文词汇表 + 错词本
+├── VIDEOS.md  按天索引的视频清单
 ├── day01/     Python 基础 + Git
 ├── day02/     列表与字典
 ├── day03/     函数
-└── day04/     字符串与文件读写（含示例数据 scores.csv）
+├── day04/     字符串基础
+└── day05/     文件读写（含示例数据 scores.csv）
 ```
 
 | 路径                 | 内容                                                    |
 | ------------------ | ----------------------------------------------------- |
 | `VOCAB.md`         | 按天分组的代码英文词汇 + 报错词辨析 + 个人错词本                            |
+| `VIDEOS.md`        | 每个知识点该看哪个视频、看多久、看完要能回答什么                                  |
 | `day01/for循环.py`   | 九九乘法表：双层 for 循环 + f-string + `end="\t"` 对齐            |
 | `day01/ladder.py`  | Python 入门七关阶梯：print → 变量 → 数据类型 → 输入 → 判断 → 循环 → 嵌套循环 |
 | `day01/NOTES-git.md` | Git 复习笔记：四层结构、status 两列、状态码对照、踩坑记录                   |
 | `day02/list_dict.py` | 列表与字典：索引切片、增删改、遍历、列表套字典，含 3 道练习                    |
 | `day03/functions.py` | 函数：为什么需要函数、参数、return vs print、作用域、重构昨日代码，含 3 道练习 + 1 挑战 |
-| `day04/strings_files.py` | 字符串方法、split/join、f-string 排版、文件读写、手写 CSV 统计，含 3 道练习 + 1 挑战 |
+| `day04/strings.py`  | 字符串：切片、6 个常用方法、split/join、f-string 排版，含 2 道练习          |
+| `day05/files.py`    | 文件读写：with open、逐行读、写文件三种模式、手写 CSV 统计，含 1 道练习 + 1 挑战   |
 
 ## 踩过的坑
 
