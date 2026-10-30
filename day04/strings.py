@@ -46,7 +46,7 @@ print("replace()：", raw.replace("88", "95"))        # 替换
 print("find()：", raw.find("88"))                    # 找到的位置，找不到返回 -1
 print("count()：", raw.count("8"))                   # 出现几次
 print("startswith()：", "小明".startswith("小"))      # 是不是以…开头
-
+print(len(raw))
 # 注意：这些方法都**不会改动原字符串**，而是返回一个新的
 print("raw 变了吗？没有：", raw)
 
@@ -103,7 +103,12 @@ print("===== 练习 =====")
 print("--- 练习 1 ---")
 dirty = ["  小明 ", "小红\n", "", " 小刚  ", "\n", " 小丽"]
 # 在下面写你的代码
-
+clean = []
+for name in dirty:
+    name = name.strip()
+    if name:          
+        clean.append(name)
+print(clean)
 
 # 练习 2：路径转换
 # 要求：把 "a-b-c-d" 转成 "a/b/c/d"，再转成 "a -> b -> c -> d"
@@ -111,10 +116,14 @@ dirty = ["  小明 ", "小红\n", "", " 小刚  ", "\n", " 小丽"]
 print()
 print("--- 练习 2 ---")
 raw2 = "a-b-c-d"
-# 在下面写你的代码
+parts = raw2.split("-")
+print("用/写","/".join(parts))
+print("用/写"," -> ".join(parts))
 
 
 # 自测（做完练习再回答，写在这里）：
-#   1. split 返回的是什么类型？join 接收的是什么类型？
-#   2. strip() 之后 raw 变了吗？为什么？
-#   3. f"{score:>5}" 里的 > 和 5 分别是什么意思？
+#   1. split 返回的是什么类型？join 接收的是什么类型？ split 返回 list，join 接收 list
+#   2. strip() 之后 raw 变了吗？为什么？ 不变 raw 返回成一个新的字符串变。Python 的字符串不可变，strip() 不会改动原字符串，
+#                                      而是返回一个新的字符串。所以要写 name = name.strip() 把结果接回来，
+#                                      光写 name.strip() 不会产生任何效果。
+#   3. f"{score:>5}" 里的 > 和 5 分别是什么意思？ 右对齐 5格
